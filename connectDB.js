@@ -1,3 +1,6 @@
+const path = require("path");
+
+const dbPath = path.resolve(__dirname, "aib2business.db");
 
 // (async () => {
 //   try {
@@ -26,4 +29,4 @@
 //     }
 // })();
 
-// module.exports = { dbPath };
+module.exports = { dbPath };
