@@ -1,0 +1,30 @@
+{
+  "name": "sendmessageemail",
+  "version": "1.0.0",
+  "description": "send email to email",
+  "main": "index.ts",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "PATOLINODD",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.17.21",
+    "@types/nodemailer": "^6.4.15",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "nodemailer": "^6.9.14",
+    "sqlite": "^5.1.1",
+    "sqlite3-offline-next": "^5.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.1.0",
+    "@types/nodemon": "^1.19.6",
+    "nodemon": "^3.1.4",
+    "ts-node": "^10.9.2",
+    "tslib": "^2.6.3",
+    "typescript": "^5.5.4"
+  }
+}
