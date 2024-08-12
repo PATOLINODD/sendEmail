@@ -16,21 +16,24 @@ class SendEmailController extends AbstractCrudController {
       const transporter = MessageEmail.createTransportMessage();
       MessageEmail.sendMessageEmail(clientEmail.data, transporter);
       await this.save(clientDao);
-      if (this.result) {
-        res.json(this.result);
-        return;
-      }
 
-      console.log(this.result);
       res.json(this.result);
     } catch (error) {
       console.error(error);
+    } finally {
+      db.close((error) => {
+        if (error) {
+          console.error(error);
+        }
+      });
     }
   };
 
   listClient = async (req, res) => {
-    console.log("ENTERING IN METHOD SendEmailController.listClient(req, res)",
-    __filename);
+    console.log(
+      "ENTERING IN METHOD SendEmailController.listClient(req, res)",
+      __filename
+    );
     try {
       const model = new ModelDao(
         {
@@ -49,6 +52,12 @@ class SendEmailController extends AbstractCrudController {
       res.json(this.result);
     } catch (error) {
       console.error(error);
+    } finally {
+      db.close((error) => {
+        if (error) {
+          console.error(error);
+        }
+      });
     }
   };
 }
