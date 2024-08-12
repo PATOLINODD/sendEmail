@@ -1,9 +1,22 @@
+const sqlite3Offline = require("sqlite3-offline-next").verbose();
+const path = require("path");
+
 const { getQueryFactory } = require("../factories");
 const { Message } = require("../models");
 
+const dbPath = path.resolve(__dirname, "aib2business.db");
+
+
 class AbstractDAO {
-  constructor(modelDao, db) {
-    this.db = db;
+  constructor(modelDao) {
+
+    this.db = new sqlite3Offline.Database(dbPath, (error) => {
+        if (error) {
+          console.error(error);
+        } else {
+          console.log("CONNECTED TO DATABASE");
+        }
+      });
     this.modelDao = modelDao;
   }
 

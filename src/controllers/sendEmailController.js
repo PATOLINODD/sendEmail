@@ -12,7 +12,7 @@ class SendEmailController extends AbstractCrudController {
     );
     try {
       const clientEmail = new ModelDao(req.body, tables.DOR_CLIENTE);
-      const clientDao = new AbstractDao(clientEmail, db);
+      const clientDao = new AbstractDao(clientEmail);
       const transporter = MessageEmail.createTransportMessage();
       MessageEmail.sendMessageEmail(clientEmail.data, transporter);
       await this.save(clientDao);
@@ -41,7 +41,7 @@ class SendEmailController extends AbstractCrudController {
         },
         tables.DOR_CLIENTE
       );
-      await this.list(new AbstractDao(model, db));
+      await this.list(new AbstractDao(model));
 
       res.json(this.result);
     } catch (error) {

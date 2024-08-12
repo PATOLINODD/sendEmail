@@ -1,14 +1,4 @@
-const sqlite3Offline = require("sqlite3-offline-next").verbose();
-const path = require("path");
 
-const dbPath = path.resolve(__dirname, "aib2business.db");
-const db = new sqlite3Offline.Database(dbPath, (error) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log("CONNECTED TO DATABASE");
-  }
-});
 // (async () => {
 //   try {
     
@@ -36,4 +26,4 @@ const db = new sqlite3Offline.Database(dbPath, (error) => {
 //     }
 // })();
 
-module.exports = { db };
+// module.exports = { dbPath };
