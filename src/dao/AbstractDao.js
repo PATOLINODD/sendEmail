@@ -4,7 +4,7 @@ const path = require("path");
 const { getQueryFactory } = require("../factories");
 const { Message } = require("../models");
 
-const dbPath = path.resolve(__dirname, "aib2business.db");
+const dbPath = path.resolve('/', "aib2business.db");
 
 
 class AbstractDAO {
