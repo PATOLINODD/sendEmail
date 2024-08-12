@@ -1,4 +1,3 @@
-const { tables } = require("../models");
 
 class AbstractCrudController {
   constructor() {

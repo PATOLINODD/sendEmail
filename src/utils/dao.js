@@ -7,7 +7,6 @@ class DAO {
     }
     getFieldsToFill(){
         return "?,".repeat(this.getFieldsKeys().length).replace(/,(?!\?)/, "").split(',').join(', ');
-
     }
     getFieldsValues(){
         return Object.values(this.modelDao.data);

@@ -21,7 +21,7 @@ class SendEmailController extends AbstractCrudController {
     } catch (error) {
       console.error(error);
     } finally {
-      db.close((error) => {
+      await db.close((error) => {
         if (error) {
           console.error(error);
         }
@@ -53,7 +53,7 @@ class SendEmailController extends AbstractCrudController {
     } catch (error) {
       console.error(error);
     } finally {
-      db.close((error) => {
+      await db.close((error) => {
         if (error) {
           console.error(error);
         }
